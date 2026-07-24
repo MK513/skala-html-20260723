@@ -108,7 +108,7 @@ function getCarFromForm() {
     const year = Number(yearText);
     const mileage = Number(mileageText);
     const price = Number(priceText);
-    const maxYear = new Date().getFullYear() + 1;
+    const maxYear = new Date().getFullYear();
 
     if (maker === "") {
         alert("제조사를 선택하세요.");

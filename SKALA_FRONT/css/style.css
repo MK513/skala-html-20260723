@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #dfe6f5;
+}
+
+body {
+    margin: 0;
+    font-family: 'Gowun Dodum', sans-serif;
+    line-height: 1.8;
+    color: #333d4b;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 50px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #22223b;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #4a4e9c;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #22223b;
+    background-color: #f3f5f9;
+    border-left: 6px solid #16a085;
+    padding: 10px 16px;
+    margin-top: 32px;
+    border-radius: 4px;
+}
+
+h3 {
+    font-size: 1.05rem;
+    color: #4a4e9c;
+    margin-top: 20px;
+}
+
+a {
+    color: #6c5ce7;
+    text-decoration: underline;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+    color: #341f97;
+}
+
+/* ===== 헤더 등장 애니메이션 (미션6) ===== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    animation: fadeInDown 0.9s ease;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e2e6ee;
+    margin: 24px 0;
+}
+
+/* ===== 미션2: 박스 모델 ===== */
+
+/* 강의 시간표 테이블 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+th, td {
+    border: 1px solid #e2e6ee;
+    padding: 14px 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4a4e9c;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #f7f9fc;
+}
+
+.lunch-row td {
+    background-color: #fdf3e3;
+    font-weight: 600;
+}
+
+/* 여행 앨범 리뷰 카드 */
+.trip-card {
+    background-color: #f7f9fc;
+    border: 1px solid #e2e6ee;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 20px 0;
+}
+
+.trip-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.trip-card figcaption {
+    margin-top: 10px;
+    color: #4a4e9c;
+    font-weight: 600;
+}
+
+/* ===== 미션4: Flex와 Grid로 레이아웃 잡기 ===== */
+
+/* 바로가기 메뉴 - Flexbox */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 28px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: #eeecff;
+}
+
+/* 본문(main) + 사이드바(aside) 가로 배치 - Flexbox */
+.content-layout {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.content-layout main {
+    flex: 2;
+    min-width: 0;
+}
+
+.content-layout aside {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 여행지 카드 3열 바둑판 배치 - Grid */
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.trip-grid .trip-card {
+    margin: 0;
+}
+
+/* 여행 카드 호버 효과 (미션6) */
+.trip-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+}
+
+/* ===== 미션8: 실시간 날씨 (DOM/이벤트, 비동기, 모듈분리) ===== */
+#weather-box {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    border: 1px dashed #6c5ce7;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+}
+
+#weather-box ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+#weather-box li {
+    margin-bottom: 4px;
+}
+
+.weather-result {
+    margin-top: 10px;
+    padding: 12px 14px;
+    background-color: #eafaf4;
+    border-radius: 8px;
+}
+
+.weather-result p {
+    margin: 4px 0;
+}
+
+/* ===== 미션7: JavaScript 미니 게임 ===== */
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.game-btn {
+    width: 100%;
+    text-align: left;
+    background-color: #16a085;
+    color: #ffffff;
+    margin-right: 0;
+}
+
+.game-btn:hover {
+    background-color: #128a72;
+}
+
+/* ===== 미션5: 반응형 웹 디자인 ===== */
+@media (max-width: 786px) {
+    .container {
+        margin: 0 auto;
+        border-radius: 0;
+        padding: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .content-layout {
+        flex-direction: column;
+    }
+
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== 미션3: 가독성 높은 회원가입 폼 ===== */
+fieldset {
+    border: 1px solid #e2e6ee;
+    border-radius: 10px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #16a085;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 14px;
+    margin: 6px 0 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #ccd3e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+textarea {
+    max-width: 100%;
+    min-height: 140px;
+    resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button[type="submit"] {
+    background-color: #16a085;
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background-color: #128a72;
+}
+
+button[type="reset"] {
+    background-color: #e2e6ee;
+    color: #4a4e9c;
+}
+
+button[type="reset"]:hover {
+    background-color: #ccd3e0;
+}

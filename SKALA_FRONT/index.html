@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강병호의 유니버스</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h1>강병호의 유니버스 🚀</h1>
+        <p>저의 프로필, 학습 내용, 여행 기록을 모아둔 Hub 페이지입니다.</p>
+    </header>
+
+    <nav>
+        <h2>📁 바로가기 메뉴</h2>
+        <ul>
+            <li><a href="myProfile.html">소개 (Profile)</a></li>
+            <li><a href="myClass.html">수업 시간표 (Class)</a></li>
+            <li><a href="myHoliday.html">휴일 계획 (Holiday)</a></li>
+            <li><a href="html/myTrip.html">여행 앨범 (Album)</a></li>
+            <li><a href="html/signUp.html">👤 회원가입 (Sign Up)</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <div class="content-layout">
+    <main>
+        <h2>📌 오늘의 주요 소식</h2>
+
+        <h3>최근 공지 및 업데이트</h3>
+        <p><strong>[업데이트] 여행 앨범에 동영상 추가 완료!</strong></p>
+        <p>홋카이도 대설산 단락 아래에 멋진 브이로그 영상을 추가했습니다. 이제 소리와 영상으로 여행을 추억할 수 있습니다.</p>
+        <p>작성일: 2026년 6월 11일</p>
+
+        <h3>📷 이달의 베스트 컷</h3>
+        <figure>
+            <img src="html/media/nature1.jpg" alt="중국 리장 호도협의 웅장한 협곡 모습" width="400">
+            <figcaption>중국 리장 호도협의 웅장한 협곡 모습 (2025년 촬영)</figcaption>
+        </figure>
+    </main>
+
+    <aside>
+        <h2>🌤 실시간 정보</h2>
+        <p>현재 위치: 광주광역시 광산구 📍</p>
+        <p>추천 학습 사이트: <a href="https://www.w3schools.com/" target="_blank">W3Schools 온라인 명세서</a></p>
+
+        <h2>🌍 실시간 세계 날씨</h2>
+        <select id="citySelect">
+            <option value="seoul">대한민국 서울 KR</option>
+            <option value="tokyo">일본 도쿄 JP</option>
+            <option value="paris">프랑스 파리 FR</option>
+            <option value="newyork">미국 뉴욕 US</option>
+            <option value="london">영국 런던 GB</option>
+            <option value="sydney">호주 시드니 AU</option>
+        </select>
+        <div id="weather-box"></div>
+
+        <section>
+            <h2>🎮 미니 게임 천국</h2>
+            <div class="game-buttons">
+                <button type="button" class="game-btn" onclick="startUpDownGame()">업다운 게임 🎲</button>
+                <button type="button" class="game-btn" onclick="calculateGrade()">성적 계산기 📊</button>
+                <button type="button" class="game-btn" onclick="showMyBag()">내 가방 보기 🎒</button>
+            </div>
+        </section>
+    </aside>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>이메일 문의: <a href="mailto:medit74@sk.com">medit74@sk.com</a></p>
+        <p>© 2026 병호 포트폴리오. 모든 태그는 웹 표준 시맨틱 태그로 작성되었습니다.</p>
+    </footer>
+    </div>
+
+    <script src="script/upDown.js"></script>
+    <script src="script/grade.js"></script>
+    <script src="script/bag.js"></script>
+    <script type="module" src="script/realtimeInfo.js"></script>
+</body>
+</html>
