@@ -11,6 +11,10 @@ const cancelEditButton = document.querySelector("#cancelEditButton");
 const searchInput = document.querySelector("#searchInput");
 const statusFilter = document.querySelector("#statusFilter");
 
+const countText = document.querySelector("#countText");
+const emptyMessage = document.querySelector("#emptyMessage");
+const carList = document.querySelector("#carList");
+
 let cars = [
     {
         id: 1,
@@ -66,7 +70,7 @@ carForm.addEventListener("submit", function (event) {
 })
 
 carList.addEventListener("click", function(event) {
-    const button = event.targer.closest("button");
+    const button = event.target.closest("button");
 
     if (button === null) {
         return;
@@ -84,7 +88,7 @@ carList.addEventListener("click", function(event) {
     }
 });
 
-searchInput.addEventListener("input", rederCars);
+searchInput.addEventListener("input", renderCars);
 
 statusFilter.addEventListener("change", renderCars);
 
@@ -101,9 +105,9 @@ function getCarFromForm() {
     const fuel = fuelInput.value;
     const status = statusInput.value;
 
-    const year = Number(year);
-    const mileage = Number(mileage);
-    const price = Number(price);
+    const year = Number(yearText);
+    const mileage = Number(mileageText);
+    const price = Number(priceText);
     const maxYear = new Date().getFullYear() + 1;
 
     if (maker === "") {
@@ -157,10 +161,10 @@ function getCarFromForm() {
 function renderCars() {
     const filteredCars = getFilteredCars();
 
-    carList.innerHtml = "";
+    carList.innerHTML = "";
 
     emptyMessage.hidden = filteredCars.length > 0;
-    countText.textContent = `전체 ${cars.length}eo / vytl ${filteredCars.length}대`;
+    countText.textContent = `전체 ${cars.length}대 / 표시 ${filteredCars.length}대`;
 
     filteredCars.forEach(function (car) {
         const card = createCarCard(car);
@@ -170,7 +174,7 @@ function renderCars() {
 
 function getFilteredCars() {
     const keyword = searchInput.value.trim().toLowerCase();
-    const selectedStatus = statusFiilter.value;
+    const selectedStatus = statusFilter.value;
 
     return cars.filter(function (car) {
         const searchText = `${car.maker} ${car.model}`.toLowerCase();
@@ -256,7 +260,7 @@ function startEdit(id) {
     fuelInput.value = car.fuel;
     statusInput.value = car.status;
 
-    submitButtom.textContent = "수정 완료";
+    submitButton.textContent = "수정 완료";
     cancelEditButton.hidden = false;
     modelInput.focus();
 }
